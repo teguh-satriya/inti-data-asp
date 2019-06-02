@@ -1,0 +1,71 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@if (Request.IsAuthenticated)
+{
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            @Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="mr-auto navbar-nav">
+                    <li class="nav-item">@Html.ActionLink("Home", "Index", "Denah", new { area = "HR" }, new { })</li>
+                    <li class="nav-item dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            Rumah Dinas
+                            <span class="caret"></span>
+                        </a>
+                        <div class="dropdown-menu">
+                            @Html.ActionLink("Penunjukan Rumah Dinas", "Index", "Hunian", new { area = "HR" }, new { @class = "dropdown-item" })
+                            @Html.ActionLink("Alokasi Rumah Dinas", "History", "Hunian", new { area = "HR" }, new { @class = "dropdown-item" })
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        @Html.ActionLink("Blacklist Penawaran", "Index", "HunianSkips", new { area = "HR" }, new { @class = "dropdown-item" })
+                    </li>
+                    <li class="nav-item">
+                        @Html.ActionLink("Permintaan Sewa", "ApprovalHrd", "Sewa", new { area = "Employee" }, new { @class = "dropdown-item" })
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            Master Data
+                            <span class="caret"></span>
+                        </a>
+                        <div class="dropdown-menu">
+                            @Html.ActionLink("Wilayah", "Index", "Wilayah", new { area = "HR" }, new { @class = "dropdown-item" })
+                            @Html.ActionLink("Rumah", "Index", "Rumah", new { area = "HR" }, new { @class = "dropdown-item" })
+                            @Html.ActionLink("Rumah Sewa", "Index", "MasterRumahSewa", new { area = "HR" }, new { @class = "dropdown-item" })
+                            @Html.ActionLink("Limit Rumah Sewa", "Index", "JatahRumahSewa", new { area = "HR" }, new { @class = "dropdown-item" })
+                            <a class="dropdown-divider"></a>
+                            @Html.ActionLink("Karyawan", "Index", "DataKaryawans", new { area = "HR" }, new { @class = "dropdown-item" })
+                            <a class="dropdown-divider"></a>
+                            @Html.ActionLink("FAQ", "Index", "MasterFaq", new { area = "HR" }, new { @class = "dropdown-item" })
+                            @Html.ActionLink("Email Template", "Index", "EmailTemplates", new { area = "HR" }, new { @class = "dropdown-item" })
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            Setting
+                            <span class="caret"></span>
+                        </a>
+                        <div class="dropdown-menu">
+                            @Html.ActionLink("User Management", "Index", "Users", new { area = "HR" }, new { @class = "dropdown-item" })
+                            @Html.ActionLink("Formula", "Update", "Formula", new { area = "HR" }, new { @class = "dropdown-item" })
+                            @Html.ActionLink("Poin KSK", "Index", "PointKsk", new { area = "HR" }, new { @class = "dropdown-item" })
+                        </div>
+                    </li>
+                </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </nav>
+}
+<div class="container body-content">
+    @RenderBody()
+
+</div>
+@RenderSection("scripts", required: false)
