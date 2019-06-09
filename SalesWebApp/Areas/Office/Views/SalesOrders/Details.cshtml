@@ -1,0 +1,250 @@
+﻿@model SalesWebApp.Models.SalesOrder
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>SalesOrder</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DocEntry)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DocEntry)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CardCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CardCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CardName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CardName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DocNum)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DocNum)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NumAtCard)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NumAtCard)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DocDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DocDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DocDueDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DocDueDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DocType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DocType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Printed)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Printed)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DocStatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DocStatus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DocCur)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DocCur)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DocRate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DocRate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SalesOrderNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SalesOrderNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GroupNum)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GroupNum)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SalesEmployee)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SalesEmployee)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ContactPerson)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ContactPerson)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ShipTo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ShipTo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BillTo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BillTo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TaxRate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TaxRate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TotalTax)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TotalTax)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TaxAmountFC)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TaxAmountFC)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DiscountForDocument)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DiscountForDocument)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TotalDiscount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TotalDiscount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TotalDiscountFC)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TotalDiscountFC)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DocumentTotal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DocumentTotal)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DocumentTotalFC)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DocumentTotalFC)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PaidToDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PaidToDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PaidFC)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PaidFC)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Remark)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Remark)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

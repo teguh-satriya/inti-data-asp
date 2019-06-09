@@ -1,0 +1,121 @@
+﻿@model IEnumerable<SalesWebApp.Models.SalesOrderDetail>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="row">
+    <h5>Contents</h5>
+    <div class="col-xs-6">
+        <a class="btn btn-primary btn-user btn-block" href="#" data-toggle="modal" data-target="#detailModal">
+            <i class="fas fa-plus"></i> Add
+        </a>
+    </div>
+</div>
+
+<div style="overflow:auto;margin-top:10px;">
+    <table class="table table-bordered" id="dataTable" cellspacing="0">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.ItemCode)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Description)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PartNumber)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.InventoryUoM)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Quantity)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.InventoryUoMQuantity)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.WarehouseCode)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ShipDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.OpenQuantity)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.OcrCode)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.OcrCode2)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.UnitPrice)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DiscountPercent)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Price)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ItemCode)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Description)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PartNumber)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.InventoryUoM)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Quantity)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.InventoryUoMQuantity)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.WarehouseCode)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ShipDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.OpenQuantity)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.OcrCode)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.OcrCode2)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.UnitPrice)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DiscountPercent)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Price)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</div>

@@ -84,6 +84,8 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -168,22 +170,132 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\DefaultController.cs" />
+    <Compile Include="Areas\Office\Controllers\SalesOrdersController.cs" />
+    <Compile Include="Areas\Office\OfficeAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Account.cs">
+      <DependentUpon>IdModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AccountDetail.cs">
+      <DependentUpon>IdModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AccountPayment.cs">
+      <DependentUpon>IdModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\ARInvoice.cs">
+      <DependentUpon>IdModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ARInvoiceDetail.cs">
+      <DependentUpon>IdModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AspNetRole.cs">
+      <DependentUpon>IdModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AspNetUser.cs">
+      <DependentUpon>IdModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AspNetUserClaim.cs">
+      <DependentUpon>IdModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AspNetUserLogin.cs">
+      <DependentUpon>IdModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DeliveryOrder.cs">
+      <DependentUpon>IdModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DeliveryOrderDetail.cs">
+      <DependentUpon>IdModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GoodReceiptPO.cs">
+      <DependentUpon>IdModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GoodReceiptPODetail.cs">
+      <DependentUpon>IdModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\IdModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IdModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\IdModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IdModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\IdModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IdModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\InventoryTransfer.cs">
+      <DependentUpon>IdModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\InventoryTransferDetail.cs">
+      <DependentUpon>IdModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\InventoryTransferRequest.cs">
+      <DependentUpon>IdModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\InventoryTransferRequestDetail.cs">
+      <DependentUpon>IdModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\MasterCustomer.cs">
+      <DependentUpon>IdModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MasterCustomerContact.cs">
+      <DependentUpon>IdModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MasterItem.cs">
+      <DependentUpon>IdModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MasterVendor.cs">
+      <DependentUpon>IdModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MasterVendorContact.cs">
+      <DependentUpon>IdModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SalesOrder.cs">
+      <DependentUpon>IdModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SalesOrderDetail.cs">
+      <DependentUpon>IdModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\img\logo-1.png" />
+    <Content Include="Content\img\logo-2.png" />
+    <Content Include="Content\img\user.png" />
+    <Content Include="Content\Site.css" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Models\IdModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>IdModel.edmx</DependentUpon>
+      <LastGenOutput>IdModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\IdModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>IdModel.edmx</DependentUpon>
+      <LastGenOutput>IdModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Vendor\fontawesome\css\font.css" />
-    <Content Include="Contents\css\sb-admin-2.css" />
-    <Content Include="Contents\css\sb-admin-2.min.css" />
-    <Content Include="Contents\img\undraw_posting_photo.svg" />
+    <Content Include="Content\css\sb-admin-2.css" />
+    <Content Include="Content\css\sb-admin-2.min.css" />
+    <Content Include="Content\img\undraw_posting_photo.svg" />
     <Content Include="Scripts\demo\chart-area-demo.js" />
     <Content Include="Scripts\demo\chart-bar-demo.js" />
     <Content Include="Scripts\demo\chart-pie-demo.js" />
@@ -204,6 +316,26 @@
     <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Admin\Views\Default\Index.cshtml" />
+    <EntityDeploy Include="Models\IdModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>IdModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\IdModel.edmx.diagram">
+      <DependentUpon>IdModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="Areas\Office\Views\web.config" />
+    <Content Include="Areas\Office\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Office\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Office\Views\SalesOrders\Create.cshtml" />
+    <Content Include="Areas\Office\Views\SalesOrders\Delete.cshtml" />
+    <Content Include="Areas\Office\Views\SalesOrders\Details.cshtml" />
+    <Content Include="Areas\Office\Views\SalesOrders\Edit.cshtml" />
+    <Content Include="Areas\Office\Views\SalesOrders\Index.cshtml" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Areas\Office\Views\SalesOrders\DetailList.cshtml" />
+    <Content Include="Areas\Office\Views\SalesOrders\DetailForm.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -1793,7 +1925,9 @@
     <Content Include="Scripts\jquery.easing.compatibility.js" />
     <Content Include="Scripts\jquery.easing.js" />
     <Content Include="Scripts\jquery.easing.min.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -1874,12 +2008,14 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Models\" />
+    <Folder Include="Areas\Office\Models\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="b5bb883979e443c0bfbd3b5d0e718d31" Name="Diagram1" ZoomLevel="55">
+        <EntityTypeShape EntityType="IdModel.Account" Width="1.5" PointX="17.75" PointY="18.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="IdModel.AccountDetail" Width="1.5" PointX="20" PointY="19.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="IdModel.AccountPayment" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="IdModel.ARInvoice" Width="1.5" PointX="5.75" PointY="18.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="IdModel.ARInvoiceDetail" Width="1.5" PointX="8" PointY="18.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="IdModel.AspNetRole" Width="1.5" PointX="0.75" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="IdModel.AspNetUserClaim" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="IdModel.AspNetUserLogin" Width="1.5" PointX="5.25" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="IdModel.AspNetUser" Width="1.5" PointX="3" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="IdModel.DeliveryOrder" Width="1.5" PointX="15.75" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="IdModel.DeliveryOrderDetail" Width="1.5" PointX="18" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="IdModel.GoodReceiptPO" Width="1.5" PointX="0.75" PointY="16.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="IdModel.GoodReceiptPODetail" Width="1.5" PointX="3" PointY="16.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="IdModel.InventoryTransfer" Width="1.5" PointX="15.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="IdModel.InventoryTransferDetail" Width="1.5" PointX="18" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="IdModel.InventoryTransferRequest" Width="1.5" PointX="10.75" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="IdModel.InventoryTransferRequestDetail" Width="1.5" PointX="13" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="IdModel.MasterCustomer" Width="1.5" PointX="10.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="IdModel.MasterCustomerContact" Width="1.5" PointX="13" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="IdModel.MasterItem" Width="1.5" PointX="10.75" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="IdModel.MasterVendor" Width="1.5" PointX="5.75" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="IdModel.MasterVendorContact" Width="1.5" PointX="8" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="IdModel.SalesOrder" Width="1.5" PointX="0.75" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="IdModel.SalesOrderDetail" Width="1.5" PointX="3" PointY="7.375" IsExpanded="true" />
+        <AssociationConnector Association="IdModel.FK_AccountDetail_Account" ManuallyRouted="false" />
+        <AssociationConnector Association="IdModel.FK_ARInvoiceDetail_ARInvoice" ManuallyRouted="false" />
+        <AssociationConnector Association="IdModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="IdModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="IdModel.FK_DeliveryOrderDetail_DeliveryOrder" ManuallyRouted="false" />
+        <AssociationConnector Association="IdModel.FK_GoodReceiptPODetail_GoodReceiptPO" ManuallyRouted="false" />
+        <AssociationConnector Association="IdModel.FK_InventoryTransferDetail_InventoryTransfer" ManuallyRouted="false" />
+        <AssociationConnector Association="IdModel.FK_InventoryTransferRequestDetail_InventoryTransferRequest" ManuallyRouted="false" />
+        <AssociationConnector Association="IdModel.FK_MasterCustomer_MasterCustomerContact" ManuallyRouted="false" />
+        <AssociationConnector Association="IdModel.FK_MasterVendor_MasterVendorContact" ManuallyRouted="false" />
+        <AssociationConnector Association="IdModel.FK_SalesOrderDetail_SalesOrder" ManuallyRouted="false" />
+        <AssociationConnector Association="IdModel.AspNetUserRoles" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

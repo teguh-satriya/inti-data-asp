@@ -10,6 +10,7 @@
     @Styles.Render("~/bundles/fa")
     @Styles.Render("~/assets/css")
     @Scripts.Render("~/bundles/modernizr")
+    @Styles.Render("~/bundles/datatable-css")
 
 </head>
 <body id="page-top">
@@ -19,11 +20,11 @@
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-                <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fas fa-laugh-wink"></i>
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="@Url.Action("Index","Home")">
+                <div class="sidebar-brand-icon">
+                    <img src="~/Content/img/logo-2.png" width="55px" />
                 </div>
-                <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
+                <div class="sidebar-brand-text mx-3">MASABARU GUNAPERSADA</div>
             </a>
 
             <!-- Divider -->
@@ -31,7 +32,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="@Url.Action("Index","Home")">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span>
                 </a>
@@ -40,6 +41,43 @@
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
 
+            <li class="nav-item">
+                <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapseSales" aria-expanded="true" aria-controls="collapseSales">
+                    <i class="fas fa-fw fa-money-bill"></i>
+                    <span>Sales</span>
+                </a>
+                <div id="collapseSales" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Kanvasing</h6>
+                        <a class="collapse-item" href="#">Surat Jalan Kanvasing</a>
+                        <a class="collapse-item" href="@Url.Action("Index","SalesOrders", new { Area = "Office"})">Sales Order Kanvasing</a>
+                        <div class="collapse-divider"></div>
+                        <h6 class="collapse-header">Taking Order</h6>
+                        <a class="collapse-item" href="#">Delivery Order</a>
+                    </div>
+                </div>
+            </li>
+
+
+            <li class="nav-item">
+                <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapseStock" aria-expanded="true" aria-controls="collapseStock">
+                    <i class="fas fa-fw fa-warehouse"></i>
+                    <span>Stock</span>
+                </a>
+                <div id="collapseStock" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Incoming Stok</h6>
+                        <a class="collapse-item" href="#">Goods Receipt</a>
+                        <div class="collapse-divider"></div>
+                        <h6 class="collapse-header">Outgoing Stok</h6>
+                        <a class="collapse-item" href="#">Stock Movement - Transit</a>
+                        <div class="collapse-divider"></div>
+                        <h6 class="collapse-header">Stock transaction</h6>
+                        <a class="collapse-item" href="#">Goods Issue/Receipt</a>
+                    </div>
+                </div>
+            </li>
+
             <!-- Sidebar Toggler (Sidebar) -->
             <div class="text-center d-none d-md-inline">
                 <button class="rounded-circle border-0" id="sidebarToggle"></button>
@@ -47,7 +85,6 @@
 
         </ul>
         <!-- End of Sidebar -->
-        
         <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
             <!-- Main Content -->
@@ -76,8 +113,8 @@
                         <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Valerie Luna</span>
-                                <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">User Name</span>
+                                <img class="img-profile rounded-circle" src="~/Content/img/user.png">
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
@@ -94,10 +131,15 @@
                                     Activity Log
                                 </a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Logout
-                                </a>
+                                @using (Html.BeginForm("LogOff", "Account", new { area = "" }, FormMethod.Post, new { id = "logoutForm" }))
+                                {
+                                    @Html.AntiForgeryToken()
+                                    <a class="dropdown-item" href="javascript:document.getElementById('logoutForm').submit()">
+                                        <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                        Logout
+                                    </a>
+                                }
+
                             </div>
                         </li>
                     </ul>
@@ -108,12 +150,11 @@
                 </div>
             </div>
             <!-- End of Main Content -->
-            
             <!-- Footer -->
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Your Website 2019</span>
+                        <span>Copyright &copy;</span>
                     </div>
                 </div>
             </footer>
@@ -122,7 +163,7 @@
         <!-- End of Content Wrapper -->
 
     </div>
-        
+
 
     <!-- Scroll to Top Button-->
     <a class="scroll-to-top rounded" href="#page-top">
@@ -136,6 +177,13 @@
     @Scripts.Render("~/assets/js")
 
     @Scripts.Render("~/bundles/chartjs")
+
+    @Scripts.Render("~/bundles/datatable-js")
+    <script>
+        $(document).ready(function() {
+          $('#dataTable').DataTable();
+        });
+    </script>
 
     @RenderSection("scripts", required: false)
 </body>
